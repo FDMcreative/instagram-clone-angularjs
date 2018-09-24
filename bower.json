@@ -1,0 +1,23 @@
+{
+  "name": "instagram-clone-angularjs",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Federico Del Monte <federico.delmonte@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.7.3",
+    "angular-ui-router": "^0.4.2",
+    "angular-resource": "^1.6.3",
+    "bootstrap-css-only": "3.3.7"
+  }
+}
