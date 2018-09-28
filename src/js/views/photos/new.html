@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-4">
+    <h2>New Photo</h2>
+    <form name="photosNew.newForm" ng-submit="photosNew.create()" novalidate>
+      <div>
+        <label for="image">Image</label>
+        <input base64 type="file" name="base64" id="image" ng-model="photosNew.photo.base64" required>
+        <div ng-messages="photosNew.newForm.base64.$error" role="alert" ng-show="(photosNew.newForm.$submitted || photosNew.newForm.base64.$touched) && photosNew.newForm.base64.$invalid" class="error">
+          <div ng-message="required">Image is required.</div>
+        </div>
+      </div>
+      <div>
+        <label for="caption">Caption</label>
+        <input type="text" name="caption" id="caption" ng-model="photosNew.photo.caption" required>
+        <div ng-messages="photosNew.newForm.caption.$error" role="alert" ng-show="(photosNew.newForm.$submitted || photosNew.newForm.caption.$touched) && photosNew.newForm.caption.$invalid" class="error">
+          <div ng-message="required">Caption is required.</div>
+        </div>
+      </div>
+
+      <button class="button">Create</button>
+    </form>
+  </div>
+</div>

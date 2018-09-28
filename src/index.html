@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="instagramApp">
 
   <head>
     <meta charset="utf-8">
@@ -11,18 +11,55 @@
     <!-- endinject -->
   </head>
 
-  <body>
+  <body ng-controller="MainCtrl as main">
 
-    <nav class="navbar navbar-default">
-      <div class="container">
-        <ul class="nav navbar-nav">
-          <li><a ui-sref="photosIndex">Photos</a></li>
-          <li><a ui-sref="photosNew">Add a photo</a></li>
-        </ul>
-      </div>
+    <header>
+
+    <nav class="container">
+      <ul>
+        <li class="logo"><a ui-sref="photosIndex">Instagram</a></li>
+        <li class="burger" ng-click="main.navIsOpen = !main.navIsOpen">&#9776;</li>
+        <div class="dropdown" ng-class="{ 'open': main.navIsOpen }">
+          <li><a ui-sref="photosIndex" ui-sref-active="active">All photos</a></li>
+          <li ng-if="main.isAuthenticated()"><a ui-sref="photosNew" ui-sref-active="active">Add a photo</a></li>
+          <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
+          <li ng-if="!main.isAuthenticated()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
+          <li ng-click="main.logout()" ng-if="main.isAuthenticated()"><a href="#">Logout</a></li>
+        </div>
+      </ul>
     </nav>
 
-    <main ui-view class="container"></main>
+    </header>
+
+    <div class="container">
+
+      <div class="message" ng-if="main.message">
+        <p>{{ main.message }}</p>
+      </div>
+
+      <main ui-view></main>
+
+    </div>
+
+    <footer class="container align-self-center">
+
+      <div class="row align-self-center">
+
+        <div class="col-8 align-self-center">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">About us</a></li>
+            <li class="list-inline-item"><a href="#">Support</a></li>
+          </ul>
+        </div>
+        <div class="col-4 align-self-center">
+          <p class="text-right">
+            <a href="https://www.instagram.com">&copy; 2018 Instagram</a>
+          </p>
+        </div>
+
+      </div>
+
+    </footer>
 
   </body>
 

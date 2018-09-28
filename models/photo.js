@@ -6,37 +6,37 @@ const commentSchema = new mongoose.Schema({
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 });
 
-const postSchema = new mongoose.Schema({
+const photoSchema = new mongoose.Schema({
   image: { type: String, required: true },
   caption: { type: String, required: true },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   comments: [ commentSchema ]
 });
 
-postSchema
+photoSchema
   .path('image')
   .set(function getPreviousImage(image) {
     this._image = this.image;
     return image;
   });
 
-postSchema
+photoSchema
   .virtual('imageSRC')
   .get(function getImageSRC() {
     if(!this.image) return null;
     return `https://s3.eu-central-1.amazonaws.com/ga-w05d03/${this.image}`;
   });
 
-postSchema.pre('save', function checkPreviousImage(next) {
+photoSchema.pre('save', function checkPreviousImage(next) {
   if(this.isModified('image') && this._image) {
     return s3.deleteObject({ Key: this._image }, next);
   }
   next();
 });
 
-postSchema.pre('remove', function removeImage(next) {
+photoSchema.pre('remove', function removeImage(next) {
   if(this.image) s3.deleteObject({ Key: this.image }, next);
   next();
 });
 
-module.exports = mongoose.model('Post', postSchema);
+module.exports = mongoose.model('Photo', photoSchema);
