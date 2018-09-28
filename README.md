@@ -1,7 +1,7 @@
 28/09/2018
-####gitHub: [gitHub/FDMcreative](https://github.com/FDMcreative/)
-####website: [FDMcreative.com](http://www.fdmcreative.com) 
-####email: [federico.delmonte@gmail.com](federico.delmonte@gmail.com)
+#### gitHub: [gitHub/FDMcreative](https://github.com/FDMcreative/)
+#### website: [FDMcreative.com](http://www.fdmcreative.com) 
+#### email: [federico.delmonte@gmail.com](federico.delmonte@gmail.com)
 ---
 # Instagram Clone - AngularJS
 ### *An Instagram-like web MEAN app with AngularJS.*
