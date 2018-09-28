@@ -15,19 +15,23 @@
 
     <header>
 
-    <nav class="container">
-      <ul>
-        <li class="logo"><a ui-sref="photosIndex">Instagram</a></li>
-        <li class="burger" ng-click="main.navIsOpen = !main.navIsOpen">&#9776;</li>
-        <div class="dropdown" ng-class="{ 'open': main.navIsOpen }">
-          <li><a ui-sref="photosIndex" ui-sref-active="active">All photos</a></li>
-          <li ng-if="main.isAuthenticated()"><a ui-sref="photosNew" ui-sref-active="active">Add a photo</a></li>
-          <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
-          <li ng-if="!main.isAuthenticated()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
-          <li ng-click="main.logout()" ng-if="main.isAuthenticated()"><a href="#">Logout</a></li>
-        </div>
-      </ul>
-    </nav>
+      <nav class="container">
+
+        <ul>
+          <li class="logo"><a ui-sref="photosIndex">Instagram</a></li>
+          <li class="burger" ng-click="main.navIsOpen = !main.navIsOpen">&#9776;</li>
+          <div class="dropdown" ng-class="{ 'open': main.navIsOpen }">
+            <li><a ui-sref="photosIndex" ui-sref-active="active">All photos</a></li>
+            <li ng-if="main.isAuthenticated()"><a ui-sref="photosNew" ui-sref-active="active">Add a photo</a></li>
+            <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
+            <li ng-if="!main.isAuthenticated()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
+            <li ng-click="main.logout()" ng-if="main.isAuthenticated()"><a href="#">Logout</a></li>
+          </div>
+        </ul>
+
+        <input type="text" class="search" ng-model="searchText" placeholder="Search...">
+
+      </nav>
 
     </header>
 
@@ -53,7 +57,7 @@
         </div>
         <div class="col-4 align-self-center">
           <p class="text-right">
-            <a href="https://www.instagram.com">&copy; 2018 Instagram</a>
+            <p>Made with <span class="heart">♥︎</span> by <a href="https://github.com/FDMcreative">FDMcreative</a></p>
           </p>
         </div>
 

@@ -41,7 +41,7 @@ I made use of:
 #### Functionalities:
 
 - Register, Login and Logout.
-- Uploading of images on AWS by registerd users.
+- Uploading of images on AWS by registered users.
 - Commenting of images by the registered users.
 - Deleting of comments by the creator user.
 
@@ -50,11 +50,10 @@ I made use of:
 
 #### Difficulties:
 
-- bla
+- Search is implemented in a very simple way; without a function inside the controller.
 
 ---
 
 #### Not Implemented:
 
 - Reciprocal vertical allignment of the images on the Index Page.
-- Search.

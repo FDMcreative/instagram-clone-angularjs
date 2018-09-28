@@ -1,5 +1,5 @@
 <div class="row photos">
-  <div ng-repeat="photo in photosIndex.all" class="col-md-3 col-sm-4">
+  <div ng-repeat="photo in photosIndex.all | filter: searchText" class="col-md-3 col-sm-4">
     <div class="photos__single">
       <h3>{{ photo.caption }}</h3>
       <div class="photos__single-image" style="background-image:url('{{ photo.imageSRC }}')" ui-sref="photosShow({ id: photo.id })"></div>

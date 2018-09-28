@@ -5,11 +5,24 @@ angular
   .controller('PhotosShowCtrl', PhotosShowCtrl)
   .controller('PhotosEditCtrl', PhotosEditCtrl);
 
-PhotosIndexCtrl.$inject = ['Photo'];
-function PhotosIndexCtrl(Photo) {
+PhotosIndexCtrl.$inject = ['Photo', 'filterFilter', '$scope'];
+function PhotosIndexCtrl(Photo, filterFilter, $scope) {
   const vm = this;
-
   vm.all = Photo.query();
+
+  // function filterPhoto() {
+  //   // const params = { caption: vm.q };
+  //   const params = 'tower';
+  //
+  //   //The first argument is what I want to filter, the second is the parameter
+  //   vm.filtered = filterFilter(vm.all, {caption:'tower'} );
+  //   console.log(vm.all);
+  //   console.log(vm.filtered);
+  //
+  // }
+  //
+  // $scope.$watch(() => vm.q, filterPhoto);
+
 }
 
 PhotosNewCtrl.$inject = ['Photo', '$state'];
