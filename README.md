@@ -1,4 +1,4 @@
-24/09/2018
+28/09/2018
 ####gitHub: [gitHub/FDMcreative](https://github.com/FDMcreative/)
 ####website: [FDMcreative.com](http://www.fdmcreative.com) 
 ####email: [federico.delmonte@gmail.com](federico.delmonte@gmail.com)
@@ -38,7 +38,7 @@ I made use of:
 
 ---
 
-####Functionalities:
+#### Functionalities:
 
 - Register, Login and Logout.
 - Uploading of images on AWS by registerd users.
@@ -48,12 +48,13 @@ I made use of:
 
 ---
 
-####Difficulties:
+#### Difficulties:
 
 - bla
 
 ---
 
-####Not Implemented:
+#### Not Implemented:
 
 - Reciprocal vertical allignment of the images on the Index Page.
+- Search.
