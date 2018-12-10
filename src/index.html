@@ -21,7 +21,6 @@
           <li class="logo"><a ui-sref="photosIndex">Instagram</a></li>
           <li class="burger" ng-click="main.navIsOpen = !main.navIsOpen">&#9776;</li>
           <div class="dropdown" ng-class="{ 'open': main.navIsOpen }">
-            <li><a ui-sref="photosIndex" ui-sref-active="active">All photos</a></li>
             <li ng-if="main.isAuthenticated()"><a ui-sref="photosNew" ui-sref-active="active">Add a photo</a></li>
             <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
             <li ng-if="main.isAuthenticated()"><a ui-sref="profile({ id: main.currentUserId })" ui-sref-active="active">Profile</a></li>
