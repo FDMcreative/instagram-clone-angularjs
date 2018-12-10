@@ -58,3 +58,4 @@ I made use of:
 #### Not Implemented:
 
 - Reciprocal vertical allignment of the images on the Index Page.
+- secureRoute not implemented for profile.delete (req.headers is undefined)
