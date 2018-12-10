@@ -34,8 +34,8 @@ function LoginCtrl($auth, $state) {
   vm.submit = submit;
 }
 
-ProfileCtrl.$inject = ['Photo', 'User', '$stateParams', 'filterFilter', '$auth'];
-function ProfileCtrl(Photo, User, $stateParams, filterFilter, $auth) {
+ProfileCtrl.$inject = ['Photo', 'User', '$stateParams', 'filterFilter', '$state', '$auth'];
+function ProfileCtrl(Photo, User, $stateParams, filterFilter, $state, $auth) {
   const vm = this;
   vm.user = User.get($stateParams);
   vm.all = Photo.query();
@@ -43,7 +43,7 @@ function ProfileCtrl(Photo, User, $stateParams, filterFilter, $auth) {
   function usersDelete() {
     vm.user
       .$remove()
-      .then(() => $state.go('/'));
+      .then(() => $state.go('photosIndex'));
 
       $auth.logout();
   }

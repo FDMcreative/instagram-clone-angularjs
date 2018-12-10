@@ -25,7 +25,8 @@ router.route('/login')
   .post(auth.login);
 
 router.route('/profile/:id')
-  .get(secureRoute, auth.show);
+  .get(secureRoute, auth.show)
+  .delete(auth.delete);
 
 router.all('/*', (req, res) => res.notFound());
 
