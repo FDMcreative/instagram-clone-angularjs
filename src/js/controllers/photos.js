@@ -47,6 +47,7 @@ function PhotosShowCtrl(Photo, PhotoComment, $stateParams, $state) {
   const vm = this;
   vm.newComment = {};
   vm.photo = Photo.get($stateParams);
+  // console.log($stateParams);
 
   function photosDelete() {
     vm.photo

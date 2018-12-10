@@ -1,0 +1,27 @@
+<div class="row">
+
+  <div class="col-md-4">
+    <h2>Hi {{ profile.user.username }}, these are your photos</h2>
+  </div>
+
+  <div class="col-md-4">
+    <button ng-click="profile.delete()" class="button" ng-if="main.isAuthenticated()">Delete your profile</button>
+      <!-- main.currentUserId: {{ main.currentUserId }} -->
+      <!-- profile.user: {{ profile.user }} -->
+  </div>
+
+</div>
+
+<div class="row">
+
+    <!-- FILTER ONLY in 1 FIELD (id) -->
+    <div ng-repeat="photo in profile.all | filter: {createdBy: { id: main.currentUserId } }" class="col-md-3 col-sm-4">
+
+      <div class="photos__single">
+        <h3>{{ photo.caption }}</h3>
+        <div class="photos__single-image" style="background-image:url('{{ photo.imageSRC }}')" ui-sref="photosShow({ id: photo.id })"></div>
+      </div>
+
+    </div>
+
+</div>

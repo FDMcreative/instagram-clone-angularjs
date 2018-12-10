@@ -1,7 +1,7 @@
 {
   "name": "instagram-clone-angularjs",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is an instagram-like single page app. It makes use of AngularJS.",
   "main": "index.js",
   "scripts": {
     "postinstall": "bower install && gulp deploy"

@@ -15,13 +15,28 @@ function login(req, res, next) {
     .then((user) => {
       if(!user || !user.validatePassword(req.body.password)) return res.unauthorized();
 
-      const token = jwt.sign({ userId: user.id }, secret, { expiresIn: '1hr' });
+      const token = jwt.sign({ userId: user.id }, secret, { expiresIn: '1hr' } );
+
       res.json({ token, message: `Welcome back ${user.username}` });
+    })
+    .catch(next);
+}
+
+function show(req, res, next) {
+  User
+    .findById(req.params.id)
+    // .populate('')
+    .exec()
+    .then((user) => {
+      if(!user) return res.notFound();
+
+      res.json(user);
     })
     .catch(next);
 }
 
 module.exports = {
   register,
-  login
+  login,
+  show
 };

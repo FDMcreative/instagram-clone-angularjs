@@ -6,13 +6,13 @@
 
     <h3>{{ photosShow.photo.caption }}</h3>
     <p>uploaded by {{ photosShow.photo.createdBy.username }}</p>
-    <button ng-click="photosShow.delete()" class="button" ng-if="main.isAuthenticated() && main.currentUserId === photoShow.photo.createdBy.id">Delete</button>
+    <button ng-click="photosShow.delete()" class="button" ng-if="main.isAuthenticated() && main.currentUserId === photosShow.photo.createdBy.id">Delete</button>
 
     <div class="comments">
 
       <h2>Comments</h2>
 
-      <ul class="comments_created">
+      <ul class="comments__created">
         <li ng-repeat="comment in photosShow.photo.comments track by $index">
           <strong>{{ comment.createdBy.username }}</strong> - {{ comment.text }}
 

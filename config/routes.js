@@ -24,6 +24,9 @@ router.route('/register')
 router.route('/login')
   .post(auth.login);
 
+router.route('/profile/:id')
+  .get(secureRoute, auth.show);
+
 router.all('/*', (req, res) => res.notFound());
 
 module.exports = router;

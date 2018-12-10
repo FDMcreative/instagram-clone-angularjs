@@ -1,4 +1,5 @@
-28/09/2018
+Created: 28/09/2018 - Last Update: 10/11/2018 
+
 #### gitHub: [gitHub/FDMcreative](https://github.com/FDMcreative/)
 #### website: [FDMcreative.com](http://www.fdmcreative.com) 
 #### email: [federico.delmonte@gmail.com](federico.delmonte@gmail.com)
@@ -21,7 +22,7 @@ I made use of:
 #### Server-side
 
 * **Mongo, Node & Express** to build a server-side API.
-* **The API** has 2 related models.
+* **The API** has 2 related models (photo, user).
 * The API includes **all RESTFUL actions** for the User model.
 * Includes **authentication** to restrict access to authorized users.
 * Includes **one embedded sub-document** (comment).
@@ -50,7 +51,7 @@ I made use of:
 
 #### Difficulties:
 
-- Search is implemented in a very simple way; without a function inside the controller.
+- Search is implemented in a very simple way; without a function inside the controller, but directly in the "profile view".
 
 ---
 

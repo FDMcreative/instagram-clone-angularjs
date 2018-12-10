@@ -1,7 +1,9 @@
 <div class="row">
+  
   <div class="col-md-4">
     <h2>Log in</h2>
     <form name="login.loginForm" ng-submit="login.submit()" novalidate>
+
       <div>
         <label for="email">Email</label>
         <input type="email" name="email" id="email" ng-model="login.credentials.email" required>
@@ -10,6 +12,7 @@
           <div ng-message="email">This field must be a valid email address.</div>
         </div>
       </div>
+
       <div>
         <label for="password">Password</label>
         <input type="password" name="password" id="password" ng-model="login.credentials.password" required>

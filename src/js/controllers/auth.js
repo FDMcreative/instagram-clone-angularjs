@@ -1,7 +1,8 @@
 angular
   .module('instagramApp')
   .controller('RegisterCtrl', RegisterCtrl)
-  .controller('LoginCtrl', LoginCtrl);
+  .controller('LoginCtrl', LoginCtrl)
+  .controller('ProfileCtrl', ProfileCtrl);
 
 RegisterCtrl.$inject = ['$auth', '$state'];
 function RegisterCtrl($auth, $state) {
@@ -31,4 +32,27 @@ function LoginCtrl($auth, $state) {
   }
 
   vm.submit = submit;
+}
+
+ProfileCtrl.$inject = ['Photo', 'User', '$stateParams', 'filterFilter', '$auth'];
+function ProfileCtrl(Photo, User, $stateParams, filterFilter, $auth) {
+  const vm = this;
+  vm.user = User.get($stateParams);
+  vm.all = Photo.query();
+
+  function usersDelete() {
+    vm.user
+      .$remove()
+      .then(() => $state.go('/'));
+
+      $auth.logout();
+  }
+
+  vm.delete = usersDelete;
+
+  // console.log(`vm.currentuserid: ${vm.currentUserId}`);
+  // console.log(`vm.username: ${vm.username}`);
+  // console.log(`vm.user: ${vm.user}`);
+
+
 }

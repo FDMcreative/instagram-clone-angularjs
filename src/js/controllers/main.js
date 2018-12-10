@@ -21,7 +21,10 @@ function MainCtrl($transitions, $rootScope, $state, $auth) {
     vm.navIsOpen = false;
 
     //we extract the userId from the json web token and store it in currentUserId
-    if($auth.getPayload()) vm.currentUserId = $auth.getPayload().userId;
+    if($auth.getPayload()) {
+      // console.log($auth.getPayload());
+      vm.currentUserId = $auth.getPayload().userId;
+    }
   });
 
   function logout() {

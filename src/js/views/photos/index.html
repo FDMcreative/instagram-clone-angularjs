@@ -1,4 +1,5 @@
 <div class="row photos">
+
   <div ng-repeat="photo in photosIndex.all | filter: searchText" class="col-md-3 col-sm-4">
     <div class="photos__single">
       <h3>{{ photo.caption }}</h3>
@@ -6,4 +7,5 @@
       <p>by {{ photo.createdBy.username }}</p>
     </div>
   </div>
+
 </div>

@@ -2,6 +2,7 @@
   <div class="col-md-4">
     <h2>Register</h2>
     <form name="register.registerForm" ng-submit="register.submit()" novalidate>
+      
       <div>
         <label for="username">Username</label>
         <input type="text" name="username" id="username" ng-model="register.user.username" required>
@@ -9,6 +10,7 @@
           <div ng-message="required">Please enter a username</div>
         </div>
       </div>
+
       <div>
         <label for="email">Email</label>
         <input type="email" name="email" id="email" ng-model="register.user.email" required>
@@ -17,6 +19,7 @@
           <div ng-message="email">This must be a valid email address</div>
         </div>
       </div>
+
       <div>
         <label for="password">Password</label>
         <input type="password" name="password" id="password" ng-model="register.user.password" required>
@@ -24,6 +27,7 @@
           <div ng-message="required">Please enter a password</div>
         </div>
       </div>
+
       <div>
         <label for="passwordConfirmation">Password Confirmation</label>
         <input type="password" name="passwordConfirmation" id="passwordConfirmation" ng-model="register.user.passwordConfirmation" required>
@@ -33,6 +37,7 @@
       </div>
 
       <button class="button">Register</button>
+
     </form>
   </div>
 </div>
